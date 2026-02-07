@@ -1,0 +1,89 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#050512;
+    color:white;
+    height:100vh;
+    overflow:hidden;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.app{
+    width:95%;
+    max-width:420px;
+    z-index:2;
+}
+
+.page{
+    display:none;
+    background:rgba(20,25,50,0.9);
+    padding:25px;
+    border-radius:20px;
+    text-align:center;
+    animation:fade 0.8s ease;
+}
+
+.page.active{display:block;}
+
+@keyframes fade{
+    from{opacity:0; transform:scale(0.85);}
+    to{opacity:1; transform:scale(1);}
+}
+
+.glow{ text-shadow:0 0 20px #ff79c6; }
+
+.text{ margin:12px 0; color:#e0e0ff; }
+
+button{
+    padding:12px 25px;
+    border:none;
+    border-radius:25px;
+    background:linear-gradient(45deg,#ff6ec7,#8fd3f4);
+    color:white;
+    margin-top:10px;
+}
+
+/* NO button */
+#noBtn{ background:#ff4d4d; }
+
+/* SLIDER */
+.slider{
+    display:flex;
+    overflow-x:auto;
+    gap:20px;
+    scroll-snap-type:x mandatory;
+}
+.slider::-webkit-scrollbar{display:none;}
+
+.slide{
+    min-width:100%;
+    scroll-snap-align:center;
+}
+.slide img{
+    width:100%;
+    height:230px;
+    object-fit:cover;
+    border-radius:15px;
+}
+.caption{
+    margin-top:6px;
+    color:#ffd6f5;
+    font-size:14px;
+}
+
+/* EFFECTS */
+.effect{
+    position:absolute;
+    animation:floatUp 8s linear infinite;
+}
+@keyframes floatUp{
+    from{transform:translateY(100vh);opacity:1;}
+    to{transform:translateY(-120vh);opacity:0;}
+}
